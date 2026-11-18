@@ -21,7 +21,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  // 读取 vite.config.js 里的 base：本地是 '/'，GitHub Pages 上是 '/仓库名/'
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
 // src/router/index.js (核心片段)
